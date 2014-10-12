@@ -1,5 +1,9 @@
 QTabBar::tab {
- padding: 5px 20px;
+    padding: 5px 30px;
+}
+
+QTabBar::tab:first {
+ margin-left: 0px;
 }
 
 QTabBar::close-button {
@@ -7,5 +11,9 @@ QTabBar::close-button {
 }
 
 QTabBar::close-button:hover {
-  border: 1px solid #FF0000;
+  background: url(':/vendor/chalkers/famfamfam/cross.png');
+}
+
+QTabBar::tab {
+ margin-left: -5px;
 }

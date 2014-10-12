@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>549</width>
+    <width>731</width>
     <height>716</height>
    </rect>
   </property>
@@ -107,7 +107,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>549</width>
+     <width>731</width>
      <height>21</height>
     </rect>
    </property>
@@ -162,10 +162,16 @@
     </widget>
     <addaction name="menu_New"/>
    </widget>
+   <widget class="QMenu" name="menu_Tests">
+    <property name="title">
+     <string>&amp;Tests</string>
+    </property>
+   </widget>
    <addaction name="menu_File"/>
-   <addaction name="menu_Project"/>
    <addaction name="menu_Edit"/>
    <addaction name="menu_View"/>
+   <addaction name="menu_Project"/>
+   <addaction name="menu_Tests"/>
    <addaction name="menu_Help"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
