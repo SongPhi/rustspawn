@@ -1,3 +1,6 @@
 [submodule "vendor/ajaxorg/ace"]
 	path = vendor/ajaxorg/ace
 	url = https://github.com/ajaxorg/ace-builds.git
+[submodule "vendor/chalkers/famfamfam"]
+	path = vendor/chalkers/famfamfam
+	url = https://github.com/chalkers/famfamfam.git
