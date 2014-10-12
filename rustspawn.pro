@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui webkit webkitwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -21,3 +21,17 @@ FORMS    += mainwindow.ui
 
 RESOURCES += \
     rustspawn.qrc
+
+vendor.path = $$OUT_PWD
+vendor.files = vendor
+
+resources.path = $$OUT_PWD
+resources.files = res
+
+html.path = $$OUT_PWD
+html.files = html
+
+INSTALLS += \
+    vendor \
+    resources \
+    html

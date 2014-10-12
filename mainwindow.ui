@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>659</width>
-    <height>732</height>
+    <width>549</width>
+    <height>716</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -78,6 +78,12 @@
         </property>
         <item>
          <widget class="QWebView" name="webView">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="url">
            <url>
             <string>about:blank</string>
@@ -101,20 +107,25 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>659</width>
+     <width>549</width>
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuApp">
+   <widget class="QMenu" name="menu_File">
     <property name="title">
      <string>&amp;File</string>
     </property>
+    <addaction name="separator"/>
     <addaction name="action_Quit"/>
    </widget>
-   <widget class="QMenu" name="menuHelp">
+   <widget class="QMenu" name="menu_Help">
     <property name="title">
      <string>&amp;Help</string>
     </property>
+    <addaction name="actionUser_Guide"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout_RustSpawn"/>
+    <addaction name="separator"/>
     <addaction name="actionAbout_Qt"/>
    </widget>
    <widget class="QMenu" name="menu_Edit">
@@ -127,11 +138,35 @@
     <property name="title">
      <string>&amp;View</string>
     </property>
+    <widget class="QMenu" name="menuLanguages">
+     <property name="title">
+      <string>Languages</string>
+     </property>
+     <addaction name="actionDefault"/>
+    </widget>
+    <addaction name="actionToolbar"/>
+    <addaction name="actionStatus_bar"/>
+    <addaction name="actionSidebar"/>
+    <addaction name="menuLanguages"/>
    </widget>
-   <addaction name="menuApp"/>
+   <widget class="QMenu" name="menu_Project">
+    <property name="title">
+     <string>&amp;Project</string>
+    </property>
+    <widget class="QMenu" name="menu_New">
+     <property name="title">
+      <string>&amp;New</string>
+     </property>
+     <addaction name="actionLocal"/>
+     <addaction name="actionFrom_Git"/>
+    </widget>
+    <addaction name="menu_New"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Project"/>
    <addaction name="menu_Edit"/>
    <addaction name="menu_View"/>
-   <addaction name="menuHelp"/>
+   <addaction name="menu_Help"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -143,12 +178,27 @@
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <widget class="QDockWidget" name="dockWidget">
+   <property name="features">
+    <set>QDockWidget::NoDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftDockWidgetArea</set>
+   </property>
    <attribute name="dockWidgetArea">
     <number>1</number>
    </attribute>
    <widget class="QWidget" name="dockWidgetContents"/>
   </widget>
   <widget class="QDockWidget" name="dockWidget_2">
+   <property name="floating">
+    <bool>false</bool>
+   </property>
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::BottomDockWidgetArea</set>
+   </property>
    <attribute name="dockWidgetArea">
     <number>8</number>
    </attribute>
@@ -167,6 +217,46 @@
   <action name="actionPrefere_nces">
    <property name="text">
     <string>Prefere&amp;nces</string>
+   </property>
+  </action>
+  <action name="actionToolbar">
+   <property name="text">
+    <string>Toolbar</string>
+   </property>
+  </action>
+  <action name="actionStatus_bar">
+   <property name="text">
+    <string>Status bar</string>
+   </property>
+  </action>
+  <action name="actionSidebar">
+   <property name="text">
+    <string>Sidebar</string>
+   </property>
+  </action>
+  <action name="actionAbout_RustSpawn">
+   <property name="text">
+    <string>About &amp;RustSpawn</string>
+   </property>
+  </action>
+  <action name="actionUser_Guide">
+   <property name="text">
+    <string>User Guide</string>
+   </property>
+  </action>
+  <action name="actionDefault">
+   <property name="text">
+    <string>Default</string>
+   </property>
+  </action>
+  <action name="actionLocal">
+   <property name="text">
+    <string>Local</string>
+   </property>
+  </action>
+  <action name="actionFrom_Git">
+   <property name="text">
+    <string>From Git</string>
    </property>
   </action>
  </widget>

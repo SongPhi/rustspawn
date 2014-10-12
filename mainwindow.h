@@ -18,6 +18,9 @@ public:
 private slots:
     void on_editorsTabWidget_tabBarDoubleClicked(int index);
 
+
+    void on_action_Quit_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

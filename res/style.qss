@@ -1,0 +1,11 @@
+QTabBar::tab {
+ padding: 5px 20px;
+}
+
+QTabBar::close-button {
+  border: 1px solid #FFFFFF;
+}
+
+QTabBar::close-button:hover {
+  border: 1px solid #FF0000;
+}
