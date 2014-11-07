@@ -16,6 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     qApp->setStyleSheet(styleSheet);
     ui->editorsTabWidget->clear();
+    this->newTextEditorTab();
 }
 
 MainWindow::~MainWindow()
@@ -50,6 +51,15 @@ void MainWindow::closeTab(int index)
 {
     this->ui->editorsTabWidget->widget(index)->close();
     this->ui->editorsTabWidget->removeTab(index);
+    if (this->ui->editorsTabWidget->count()==0)
+        this->newTextEditorTab();
+}
+
+bool MainWindow::openFile(QString filename)
+{
+    TextEditorTab *newTextEditor = new TextEditorTab( this->ui->editorsTabWidget, filename );
+    this->ui->editorsTabWidget->addTab(newTextEditor, tr("Untitled"));
+    this->ui->editorsTabWidget->setCurrentWidget(newTextEditor);
 }
 
 void MainWindow::on_editorsTabWidget_tabCloseRequested(int index)
@@ -65,4 +75,9 @@ void MainWindow::on_actionAbout_Qt_triggered()
 void MainWindow::on_actionClose_tab_triggered()
 {
     emit tabCloseRequested(this->ui->editorsTabWidget->currentIndex());
+}
+
+void MainWindow::on_action_Open_triggered()
+{
+    emit openFileAction();
 }

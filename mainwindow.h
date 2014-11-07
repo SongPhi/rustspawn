@@ -29,16 +29,20 @@ private slots:
 
     void on_actionClose_tab_triggered();
 
+    void on_action_Open_triggered();
+
 private:
     Ui::MainWindow *ui;
 
 signals:
     void newFileAction();
+    void openFileAction();
     void tabCloseRequested(int index);
 
 public slots:
     void newTextEditorTab();
     void closeTab(int index);
+    bool openFile(QString filename);
 };
 
 #endif // MAINWINDOW_H

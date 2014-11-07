@@ -24,7 +24,11 @@ public:
 
         return m_instance;
     }
+
     void setup();
+
+
+    QString *textEditorBaseUrl();
 
 
 protected:
@@ -36,11 +40,13 @@ private:
     int argc;
     QStringList *argv;
     MainWindow *mainWin;
+    QString *_textEditorBaseUrl;
 
 signals:
 
 public slots:
     void newFileAction();
+    void openFileAction();
     void requestCloseTab(int index);
 
 };
