@@ -14,10 +14,14 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    base/cliwrapper.cpp
+    base/cliwrapper.cpp \
+    rustspawn.cpp \
+    tabs/editors/texteditortab.cpp
 
 HEADERS  += mainwindow.h \
-    base/cliwrapper.h
+    base/cliwrapper.h \
+    rustspawn.h \
+    tabs/editors/texteditortab.h
 
 FORMS    += mainwindow.ui
 

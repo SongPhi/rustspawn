@@ -8,10 +8,13 @@ QTabBar::tab:first {
 
 QTabBar::close-button {
   border: 1px solid #FFFFFF;
+  margin-right:3px;
+  margin-left:-3px;
 }
 
 QTabBar::close-button:hover {
   background: url(':/vendor/chalkers/famfamfam/cross.png');
+
 }
 
 QTabBar::tab {

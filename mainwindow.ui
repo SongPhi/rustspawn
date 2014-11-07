@@ -33,7 +33,7 @@
     <item>
      <widget class="QTabWidget" name="editorsTabWidget">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -76,21 +76,6 @@
         <property name="bottomMargin">
          <number>0</number>
         </property>
-        <item>
-         <widget class="QWebView" name="webView">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="url">
-           <url>
-            <string>about:blank</string>
-           </url>
-          </property>
-         </widget>
-        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="tab_2">
@@ -115,6 +100,21 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
+    <widget class="QMenu" name="menu_Recent">
+     <property name="title">
+      <string>&amp;Recent</string>
+     </property>
+     <addaction name="actionNo_recent_opened_file"/>
+    </widget>
+    <addaction name="action_New"/>
+    <addaction name="separator"/>
+    <addaction name="action_Open"/>
+    <addaction name="action_Save"/>
+    <addaction name="actionSave_as"/>
+    <addaction name="actionSave_All"/>
+    <addaction name="actionClose_tab"/>
+    <addaction name="separator"/>
+    <addaction name="menu_Recent"/>
     <addaction name="separator"/>
     <addaction name="action_Quit"/>
    </widget>
@@ -123,15 +123,25 @@
      <string>&amp;Help</string>
     </property>
     <addaction name="actionUser_Guide"/>
-    <addaction name="separator"/>
-    <addaction name="actionAbout_RustSpawn"/>
+    <addaction name="actionExamples_Tutorials"/>
     <addaction name="separator"/>
     <addaction name="actionAbout_Qt"/>
+    <addaction name="actionAbout_Rust_lang_compiler"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout_RustSpawn"/>
    </widget>
    <widget class="QMenu" name="menu_Edit">
     <property name="title">
      <string>&amp;Edit</string>
     </property>
+    <widget class="QMenu" name="menuEncoding">
+     <property name="title">
+      <string>Encoding</string>
+     </property>
+     <addaction name="actionANSI"/>
+    </widget>
+    <addaction name="menuEncoding"/>
+    <addaction name="separator"/>
     <addaction name="actionPrefere_nces"/>
    </widget>
    <widget class="QMenu" name="menu_View">
@@ -164,7 +174,7 @@
    </widget>
    <widget class="QMenu" name="menu_Tests">
     <property name="title">
-     <string>&amp;Tests</string>
+     <string>&amp;Test</string>
     </property>
    </widget>
    <addaction name="menu_File"/>
@@ -219,6 +229,9 @@
    <property name="text">
     <string>&amp;Quit</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
   </action>
   <action name="actionPrefere_nces">
    <property name="text">
@@ -226,16 +239,25 @@
    </property>
   </action>
   <action name="actionToolbar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Toolbar</string>
    </property>
   </action>
   <action name="actionStatus_bar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Status bar</string>
    </property>
   </action>
   <action name="actionSidebar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Sidebar</string>
    </property>
@@ -247,7 +269,7 @@
   </action>
   <action name="actionUser_Guide">
    <property name="text">
-    <string>User Guide</string>
+    <string>User Manual</string>
    </property>
   </action>
   <action name="actionDefault">
@@ -265,15 +287,76 @@
     <string>From Git</string>
    </property>
   </action>
+  <action name="action_Save">
+   <property name="text">
+    <string>&amp;Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_Open">
+   <property name="text">
+    <string>&amp;Open</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionSave_as">
+   <property name="text">
+    <string>Save as...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionSave_All">
+   <property name="text">
+    <string>Save &amp;All</string>
+   </property>
+  </action>
+  <action name="action_New">
+   <property name="text">
+    <string>&amp;New...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionNo_recent_opened_file">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>No recent opened file</string>
+   </property>
+  </action>
+  <action name="actionANSI">
+   <property name="text">
+    <string>ANSI</string>
+   </property>
+  </action>
+  <action name="actionAbout_Rust_lang_compiler">
+   <property name="text">
+    <string>About Rust lang &amp;&amp; compiler</string>
+   </property>
+  </action>
+  <action name="actionExamples_Tutorials">
+   <property name="text">
+    <string>Examples &amp;&amp; Tutorials</string>
+   </property>
+  </action>
+  <action name="actionClose_tab">
+   <property name="text">
+    <string>Close tab</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+W</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>QWebView</class>
-   <extends>QWidget</extends>
-   <header>QtWebKitWidgets/QWebView</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

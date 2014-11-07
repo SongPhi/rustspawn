@@ -21,8 +21,24 @@ private slots:
 
     void on_action_Quit_triggered();
 
+    void on_action_New_triggered();
+
+    void on_editorsTabWidget_tabCloseRequested(int index);
+
+    void on_actionAbout_Qt_triggered();
+
+    void on_actionClose_tab_triggered();
+
 private:
     Ui::MainWindow *ui;
+
+signals:
+    void newFileAction();
+    void tabCloseRequested(int index);
+
+public slots:
+    void newTextEditorTab();
+    void closeTab(int index);
 };
 
 #endif // MAINWINDOW_H
