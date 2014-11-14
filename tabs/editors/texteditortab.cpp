@@ -3,6 +3,7 @@
 #include <QTextStream>
 #include <QFile>
 #include <QStringList>
+#include <QtGui>
 
 TextEditorTab::TextEditorTab(QWidget *parent, QString filename) :
     QWebView(parent)
@@ -24,7 +25,11 @@ TextEditorTab::TextEditorTab(QWidget *parent, QString filename) :
         content.append(tplParts.at(0) + "<div id=\"editor\">");
         QString buffer = stream->read(1024);
         while ( !buffer.isNull() ) {
+#if QT_VERSION >= 0x050000
             content.append(buffer.toHtmlEscaped());
+#else
+            content.append( Qt::escape( buffer ) );
+#endif
             buffer = stream->read(1024);
         }
         content.append(tplParts.at(1));
